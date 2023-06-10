@@ -41,5 +41,6 @@ public class OrderEntity {
     private CustomerEntity customer;
 //    los FetchType EAGER y LAZY son para que cuando se haga una consulta a la order entity, el lazy no se consulte y el eager si se consulte
     @OneToMany(mappedBy = "order", fetch = FetchType.EAGER)
+    @OrderBy("price ASC")
     private List<ItemEntity> items;
 }
